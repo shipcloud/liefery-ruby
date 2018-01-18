@@ -1,0 +1,19 @@
+{
+  "quote": {
+    "net_price": {
+      "cents": "699",
+      "currency": "EUR",
+      "display": "6.99 €"
+    },
+    "vat": {
+      "cents": "133",
+      "currency": "EUR",
+      "display": "1.33 €"
+    },
+    "gross_price": {
+      "cents": "832",
+      "currency": "EUR",
+      "display": "8.32 €"
+    }
+  }
+}

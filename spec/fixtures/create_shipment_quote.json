@@ -1,0 +1,23 @@
+{
+  "shipment": {
+    "packages": [
+      {
+        "size": "M",
+        "weight": 3,
+        "length": 30,
+        "width": 25,
+        "height": 10
+      }
+    ],
+    "pick_up_address": {
+      "street": "Sanderstr. 28",
+      "zip": "12047",
+      "city": "Berlin"
+    },
+    "drop_off_address": {
+      "street": "Brunnenstr. 10",
+      "zip": "10119",
+      "city": "Berlin"
+    }
+  }
+}

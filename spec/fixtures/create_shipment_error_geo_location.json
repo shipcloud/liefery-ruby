@@ -1,0 +1,12 @@
+{
+  "errors": {
+    "shipment": {
+      "drop_off_address.geo_location": [
+        "Geo Koordinaten could not be found: Rentzelstraße 80, 20146 Hamburg"
+      ],
+      "state": [
+        "Status -> missing mandatory parameters"
+      ]
+    }
+  }
+}

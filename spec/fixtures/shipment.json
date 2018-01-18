@@ -1,0 +1,66 @@
+{
+  "shipment": {
+    "id": "FYGIT",
+    "description": "handle with care",
+    "state": "accepted",
+    "created_at": "2014-11-28T14:25:00.154+01:00",
+    "updated_at": "2014-11-28T14:25:00.154+01:00",
+    "scheduled_pick_up_time_type": "asap",
+    "scheduled_pick_up_time_from": "2014-11-28T15:15:00.087+01:00",
+    "scheduled_pick_up_time_until": null,
+    "scheduled_drop_off_time_type": "time_window",
+    "scheduled_drop_off_time_from": "2014-11-28T16:44:35.458+01:00",
+    "scheduled_drop_off_time_until": "2014-11-28T17:44:35.458+01:00",
+    "estimated_pick_up_time": "2014-11-28T15:15:00.087+01:00",
+    "estimated_drop_off_time": "2014-11-28T17:14:35.458+01:00",
+    "vat_rate": "19.0",
+    "incoming_api_id": "external-id",
+    "tracking_url": "https://staging.liefery.com/#/order/FYGIT",
+    "tracking_url_details": "https://staging.liefery.com/#/order/FYGIT/10119",
+    "pick_up_address": {
+      "street": "Sanderstr. 28",
+      "zip": "12047",
+      "city": "Berlin",
+      "country_code": "DE",
+      "contact_name": "Hans Mustermann",
+      "email": "hans@example.com",
+      "company": "Bitcrowd",
+      "phone": "012 345 678",
+      "comment": "Aufgang II"
+    },
+    "drop_off_address": {
+      "street": "Brunnenstr. 10",
+      "zip": "10119",
+      "city": "Berlin",
+      "country_code": "DE",
+      "contact_name": "Erika Mustermann",
+      "email": "erika@example.com",
+      "company": "Minglabs",
+      "phone": "012 345 678",
+      "comment": "Baustelle vorm Eingang"
+    },
+    "courier": null,
+    "packages": [{
+      "size": "M",
+      "width": "25.0",
+      "height": "10.0",
+      "length": "30.0",
+      "weight": "3.0"
+    }],
+    "net_price": {
+      "cents": "699",
+      "currency": "EUR",
+      "display": "6.99 €"
+    },
+    "gross_price": {
+      "cents": "832",
+      "currency": "EUR",
+      "display": "8.32 €"
+    },
+    "vat": {
+      "cents": "133",
+      "currency": "EUR",
+      "display": "1.33 €"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "errors": {
+    "shipment": {
+      "packages.package_size_id": ["Packages package size can't be blank"],
+      "packages": ["Packstücke not created"],
+      "state": ["Status -\u003e Price can not be calculated"],
+      "scheduled_drop_off_time_from": ["Beginn Ablieferzeit ist nicht möglich, da zu zeitnah"]
+    }
+  }
+}
