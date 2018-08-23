@@ -48,7 +48,7 @@ RSpec.describe Liefery::Client do
       client = Liefery::Client.new(api_key: '5cca5039c7b44aacb1')
       request = stub_get("/something?foo=bar")
 
-      client.get "/something", foo: "bar"
+      client.get "something", foo: "bar"
 
       expect(request).to have_been_made
     end
@@ -57,7 +57,7 @@ RSpec.describe Liefery::Client do
       client = Liefery::Client.new(api_key: '5cca5039c7b44aacb1')
       request = stub_get("/").
         with(query: { foo: "bar" }, headers: { accept: "text/plain" })
-      client.get "/", foo: "bar", accept: "text/plain"
+      client.get "", foo: "bar", accept: "text/plain"
 
       expect(request).to have_been_made
     end
@@ -68,7 +68,7 @@ RSpec.describe Liefery::Client do
       client = Liefery::Client.new(api_key: '5cca5039c7b44aacb1')
       request = stub_head("/something?foo=bar")
 
-      client.head "/something", foo: "bar"
+      client.head "something", foo: "bar"
 
       expect(request).to have_been_made
     end
@@ -78,7 +78,7 @@ RSpec.describe Liefery::Client do
       request = stub_head("/").
         with(query: { foo: "bar" }, headers: { accept: "text/plain" })
 
-      client.head "/", foo: "bar", accept: "text/plain"
+      client.head "", foo: "bar", accept: "text/plain"
 
       expect(request).to have_been_made
     end
@@ -90,7 +90,7 @@ RSpec.describe Liefery::Client do
       request = stub_post("/something").
         with(body: { foo: "bar" }.to_json)
 
-      client.post "/something", foo: "bar"
+      client.post "something", foo: "bar"
 
       expect(request).to have_been_made
     end
@@ -101,7 +101,7 @@ RSpec.describe Liefery::Client do
       request = stub_post("/").
         with(body: { foo: "bar" }.to_json, headers: headers)
 
-      client.post "/", foo: "bar", headers: headers
+      client.post "", foo: "bar", headers: headers
 
       expect(request).to have_been_made
     end
@@ -113,7 +113,7 @@ RSpec.describe Liefery::Client do
       request = stub_put("/something").
         with(body: { foo: "bar" }.to_json)
 
-      client.put "/something", foo: "bar"
+      client.put "something", foo: "bar"
 
       expect(request).to have_been_made
     end
@@ -124,7 +124,7 @@ RSpec.describe Liefery::Client do
       request = stub_put("/").
         with(body: { foo: "bar" }.to_json, headers: headers)
 
-      client.put "/", foo: "bar", headers: headers
+      client.put "", foo: "bar", headers: headers
 
       expect(request).to have_been_made
     end
@@ -136,7 +136,7 @@ RSpec.describe Liefery::Client do
       request = stub_patch("/something").
         with(body: { foo: "bar" }.to_json)
 
-      client.patch "/something", foo: "bar"
+      client.patch "something", foo: "bar"
 
       expect(request).to have_been_made
     end
@@ -147,7 +147,7 @@ RSpec.describe Liefery::Client do
       request = stub_patch("/").
         with(body: { foo: "bar" }.to_json, headers: headers)
 
-      client.patch "/", foo: "bar", headers: headers
+      client.patch "", foo: "bar", headers: headers
 
       expect(request).to have_been_made
     end
@@ -158,7 +158,7 @@ RSpec.describe Liefery::Client do
       client = Liefery::Client.new(api_key: '5cca5039c7b44aacb1')
       request = stub_delete("/something")
 
-      client.delete "/something"
+      client.delete "something"
 
       expect(request).to have_been_made
     end
@@ -168,7 +168,7 @@ RSpec.describe Liefery::Client do
       headers = { "X-Foo" => "bar" }
       request = stub_delete("/").with(headers: headers)
 
-      client.delete "/", headers: headers
+      client.delete "", headers: headers
 
       expect(request).to have_been_made
     end
@@ -193,7 +193,7 @@ RSpec.describe Liefery::Client do
       request = stub_get("/").
         with(headers: { user_agent: Liefery::Default.user_agent })
 
-      client.get "/"
+      client.get ""
 
       expect(request).to have_been_made
     end
@@ -203,7 +203,7 @@ RSpec.describe Liefery::Client do
       client = Liefery::Client.new(user_agent: user_agent)
       request = stub_get("/").with(headers: { user_agent: user_agent })
 
-      client.get "/"
+      client.get ""
 
       expect(request).to have_been_made
     end
@@ -213,7 +213,7 @@ RSpec.describe Liefery::Client do
       request = stub_get('/').with(headers: { 'API-Key' => api_key })
       client = Liefery::Client.new(api_key: api_key)
 
-      client.get "/"
+      client.get ""
 
       expect(request).to have_been_made
     end
@@ -224,14 +224,14 @@ RSpec.describe Liefery::Client do
       client = Liefery::Client.new(api_key: '5cca5039c7b44aacb1')
       stub_get('/four_oh_four').to_return(status: 404)
 
-      expect { client.get('/four_oh_four') }.to raise_error Liefery::NotFound
+      expect { client.get('four_oh_four') }.to raise_error Liefery::NotFound
     end
 
     it "raises on 500" do
       client = Liefery::Client.new(api_key: '5cca5039c7b44aacb1')
       stub_get('/five_oh_oh').to_return(status: 500)
 
-      expect { client.get('/five_oh_oh') }.to raise_error Liefery::InternalServerError
+      expect { client.get('five_oh_oh') }.to raise_error Liefery::InternalServerError
     end
 
     it "raises a ClientError on unknown client errors" do
@@ -242,7 +242,7 @@ RSpec.describe Liefery::Client do
         body: fixture('create_shipment_error.json')
       )
 
-      expect { client.get('/something') }.to raise_error Liefery::ClientError
+      expect { client.get('something') }.to raise_error Liefery::ClientError
     end
 
     it "raises a ServerError on unknown server errors" do
@@ -253,7 +253,7 @@ RSpec.describe Liefery::Client do
         body: fixture('create_shipment_error.json')
       )
 
-      expect { client.get('/something') }.to raise_error Liefery::ServerError
+      expect { client.get('something') }.to raise_error Liefery::ServerError
     end
 
     it "returns an error object" do
@@ -264,7 +264,7 @@ RSpec.describe Liefery::Client do
         body: fixture('create_shipment_error.json')
       )
 
-      expect { client.get('/something') }.to raise_error(
+      expect { client.get('something') }.to raise_error(
         Liefery::UnprocessableEntity,
         'Packages package size can\'t be blank, ' \
           'Packstücke not created, Status -> Price can not be calculated, ' \
