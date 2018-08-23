@@ -26,6 +26,9 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 
+  # Enable flags like --only-failures and --next-failure
+  config.example_status_persistence_file_path = ".rspec_results"
+
   # had to override backtrace_exclusion_patterns because of current
   # directory structure. once this gem has been extracted into a separate
   # respository this can be removed

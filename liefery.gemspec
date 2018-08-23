@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 1.6'
   spec.add_development_dependency 'rake', '~> 10.3.2'
-  spec.add_development_dependency 'rspec', '~> 3.0.0'
+  spec.add_development_dependency "rspec", "~> 3.8.0"
   spec.add_development_dependency 'simplecov', '~> 0.9.0'
   spec.add_development_dependency 'webmock', '~> 1.18.0'
 end
